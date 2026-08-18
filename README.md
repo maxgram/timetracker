@@ -1,8 +1,11 @@
-# TimeTracker
+# TimeTracker (Alpha with bugs)
 
 A modern, cross-platform desktop time tracking app built with **Electron, React, TypeScript, Tailwind CSS** and **SQLite**. Track time per project, group entries by day, filter and export summaries, and bill clients with professional PDF invoices.
 
 ![Views](https://img.shields.io/badge/views-6-blue) ![Electron](https://img.shields.io/badge/electron-43-47848f) ![Platforms](https://img.shields.io/badge/platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey)
+
+
+<img width="1584" height="1047" alt="image" src="https://github.com/user-attachments/assets/bcaada9d-ae70-4e9a-82a8-f4e182fedf7e" />
 
 
 ## Features
