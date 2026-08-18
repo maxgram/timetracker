@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          - os: macos-latest
+            script: npm run dist:mac
+            artifact: 'dist/*.dmg dist/*.zip'
+          - os: ubuntu-22.04
+            script: npm run dist:linux
+            artifact: 'dist/*.AppImage dist/*.deb'
+          - os: windows-latest
+            script: npm run dist:win
+            artifact: 'dist/*.exe'
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: ${{ matrix.script }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: timetracker-${{ matrix.os }}
+          path: ${{ matrix.artifact }}

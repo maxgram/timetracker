@@ -1,0 +1,57 @@
+{
+  "name": "timetracker",
+  "version": "0.1.0",
+  "description": "Cross-platform time tracking, summary and invoicing desktop app",
+  "main": "out/main/index.js",
+  "author": {
+    "name": "Max Gram"
+  },
+  "homepage": "https://github.com/maxgram/timetracker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxgram/timetracker.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "electron-vite dev",
+    "start": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "build": "electron-vite build",
+    "postinstall": "electron node_modules/electron/install.js && electron-builder install-app-deps",
+    "dist": "electron-vite build && electron-builder",
+    "dist:mac": "electron-vite build && electron-builder --mac",
+    "dist:linux": "electron-vite build && electron-builder --linux",
+    "dist:win": "electron-vite build && electron-builder --win"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.2.0",
+    "@types/pdfmake": "^0.3.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^5.2.0",
+    "electron": "^43.4.0",
+    "electron-builder": "^26.15.3",
+    "electron-vite": "^5.0.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^7.3.6"
+  },
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "date-fns": "^4.4.0",
+    "lucide-react": "^1.31.0",
+    "pdfmake": "^0.3.11",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "zustand": "^5.0.15"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true,
+    "esbuild@0.28.2": true,
+    "electron-winstaller@5.4.0": true,
+    "electron@43.4.0": true
+  }
+}
