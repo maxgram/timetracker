@@ -1,4 +1,4 @@
-# TimeTracker (Alpha with bugs)
+# TimeTracker (Vibecoded concept with bugs)
 
 A modern, cross-platform desktop time tracking app built with **Electron, React, TypeScript, Tailwind CSS** and **SQLite**. Track time per project, group entries by day, filter and export summaries, and bill clients with professional PDF invoices.
 
